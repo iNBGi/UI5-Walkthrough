@@ -3,7 +3,7 @@
    xmlns="sap.m"
    xmlns:core="sap.ui.core"
    xmlns:mvc="sap.ui.core.mvc">
-   <List
+   <Table
       id="invoiceList"
       headerText="{i18n>invoiceListTitle}"
       class="sapUiResponsiveMargin"
@@ -21,6 +21,15 @@
       <SearchField width="50%" search=".onFilterInvoices" />
       </Toolbar>
       </headerToolbar>
+        <columns>
+        <Column hAlign="End"
+        minScreenWidth="Small"
+        demandPopin="true"
+        width="4em">
+        <Text text = "{i18n>columnQuantity}"/>
+        </Column>
+        
+        </columns>
       <items>
          <ObjectListItem
             title="{invoice>Quantity} X {invoice>ProductName}"
@@ -48,5 +57,5 @@
                 </firstStatus>
             </ObjectListItem>
       </items>
-   </List>
+   </Table>
 </mvc:View>
